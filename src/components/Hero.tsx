@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Package, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -10,20 +10,14 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          {/* Logo placeholder - will be replaced with actual logo */}
+          {/* Company Logo */}
           <div className="flex justify-center mb-8">
-            <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
-              <Package className="w-12 h-12 text-primary" />
-            </div>
+            <img 
+              src="/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png" 
+              alt="Global Systems - Where Vision Begins" 
+              className="h-32 w-auto"
+            />
           </div>
-          
-          <h1 className="text-6xl md:text-7xl font-bold text-foreground mb-6">
-            Global Systems
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-4 font-light">
-            WHERE VISION BEGINS
-          </p>
           
           <div className="w-32 h-[1px] bg-primary mx-auto mb-8" />
           
