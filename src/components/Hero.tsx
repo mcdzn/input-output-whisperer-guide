@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -23,7 +23,7 @@ const Hero = () => {
             <img 
               src="/lovable-uploads/0ea2c340-388a-41ab-acff-2a1e34ad0d50.png" 
               alt="Global Systems - Where Vision Begins" 
-              className="h-16 w-auto filter brightness-0 invert"
+              className="h-24 w-auto filter brightness-0 invert"
             />
           </div>
           <div className="hidden md:flex space-x-8 text-white">
@@ -37,10 +37,10 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
             LUXURY PACKAGING AND DISPLAY FOR
             <br />
-            <span className="text-4xl md:text-6xl">JEWELRY, WHERE VISION BEGINS</span>
+            <span className="text-3xl md:text-5xl">JEWELRY, WHERE VISION BEGINS</span>
           </h1>
           
           <div className="w-16 h-16 mx-auto mb-8 rotate-45 border-2 border-white/30"></div>
@@ -55,14 +55,10 @@ const Hero = () => {
             Displays for Exclusive Brands.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 bg-white text-black hover:bg-white/90 font-semibold">
+          <div className="flex justify-center">
+            <Button size="lg" className="text-lg px-12 py-6 bg-white text-black hover:bg-white/90 hover:scale-105 transition-all duration-300 font-semibold shadow-2xl">
               Request Quote
               <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-white/40 text-white hover:bg-white/10 hover:border-white/60">
-              <Sparkles className="mr-2 w-5 h-5" />
-              View Portfolio
             </Button>
           </div>
         </div>
