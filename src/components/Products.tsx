@@ -1,72 +1,84 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Package, ShoppingBag, Monitor, Gift } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Products = () => {
   const products = [
     {
-      icon: Package,
-      title: "Jewelry Boxes",
-      description: "Elegant boxes for rings, necklaces, earrings, and more",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+      title: "Showcases and displays",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      description: "Professional display solutions for jewelry presentation"
     },
     {
-      icon: Gift,
-      title: "Premium Pouches",
-      description: "Luxurious fabric and leather pouches for delicate pieces",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop"
+      title: "Jewelry boxes",
+      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop",
+      description: "Elegant storage solutions for precious jewelry"
     },
     {
-      icon: Monitor,
-      title: "Display Solutions",
-      description: "Professional displays for showcasing your jewelry collections",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
+      title: "Luxury bags",
+      image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop",
+      description: "Premium shopping bags with custom branding"
     },
     {
-      icon: ShoppingBag,
-      title: "Custom Bags",
-      description: "Branded shopping bags and gift bags for your business",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=300&fit=crop"
+      title: "Jewelry organization",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      description: "Efficient organization systems for jewelry storage"
+    },
+    {
+      title: "Presentation trays & Mirrors",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop",
+      description: "Professional presentation accessories"
+    },
+    {
+      title: "Watch world",
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop",
+      description: "Specialized display solutions for timepieces"
+    },
+    {
+      title: "Jewelry pouches",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+      description: "Soft protective pouches for delicate items"
+    },
+    {
+      title: "Jewelry rolls",
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop",
+      description: "Travel-friendly jewelry organization solutions"
     }
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/30" id="products">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Our Product Range
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+            Our products
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From elegant jewelry boxes to custom display solutions, we offer everything 
-            you need to present your jewelry beautifully.
-          </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+            <Card key={index} className="group overflow-hidden border-0 shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="aspect-[4/3] relative overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                <div className="absolute top-4 left-4 w-12 h-12 bg-background/90 backdrop-blur rounded-full flex items-center justify-center">
-                  <product.icon className="w-6 h-6 text-primary" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <h3 className="text-white font-semibold text-lg mb-1">
+                    {product.title}
+                  </h3>
                 </div>
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {product.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {product.description}
-                </p>
-              </CardContent>
             </Card>
           ))}
+        </div>
+        
+        <div className="text-center mt-12">
+          <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3">
+            DISCOVER MORE
+          </Button>
         </div>
       </div>
     </section>
