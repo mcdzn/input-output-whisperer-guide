@@ -3,16 +3,16 @@ const Showrooms = () => {
   const showrooms = [
     {
       title: "Vietnam",
-      image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=750&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=750&fit=crop",
-      factoryImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=750&fit=crop",
+      image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+      hoverImage: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+      factoryImage: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
       description: "Visit our state-of-the-art manufacturing facility"
     },
     {
       title: "China", 
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=750&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=600&h=750&fit=crop",
-      factoryImage: "https://images.unsplash.com/photo-1565843708714-2c1e0490e5c0?w=600&h=750&fit=crop",
+      image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+      hoverImage: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+      factoryImage: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
       description: "Experience excellence in our flagship production center"
     }
   ];
@@ -38,12 +38,12 @@ const Showrooms = () => {
                 <img 
                   src={showroom.hoverImage} 
                   alt={`${showroom.title} facility`}
-                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100 group-hover:translate-x-0 translate-x-full"
+                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100"
                 />
                 <img 
                   src={showroom.factoryImage} 
                   alt={`${showroom.title} workers`}
-                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out delay-1500 group-hover:opacity-100 group-hover:translate-x-0 translate-x-full"
+                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out delay-700 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
@@ -54,7 +54,10 @@ const Showrooms = () => {
                 <p className="text-muted-foreground mb-6 text-sm">
                   {showroom.description}
                 </p>
-                <button className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded text-sm font-medium transition-all duration-300 hover:scale-105 shadow-lg">
+                <button 
+                  className="text-white px-6 py-3 rounded text-sm font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                  style={{ backgroundColor: '#24354F' }}
+                >
                   SCHEDULE YOUR VISIT TO OUR SHOWROOM IN {showroom.title.toUpperCase()}
                 </button>
               </div>
