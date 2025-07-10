@@ -1,107 +1,87 @@
 
-import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 const Products = () => {
-  const products = [
-    {
-      title: "Luxury Jewelry Boxes",
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=600&h=400&fit=crop",
-      description: "Elegant storage solutions for precious jewelry"
-    },
-    {
-      title: "Velvet Jewelry Cases",
-      image: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1581591524425-c7e0978865fc?w=600&h=400&fit=crop",
-      description: "Soft velvet-lined cases for delicate pieces"
-    },
-    {
-      title: "Wooden Jewelry Chests",
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
-      description: "Handcrafted wooden chests with multiple compartments"
-    },
-    {
-      title: "Travel Jewelry Cases",
-      image: "https://images.unsplash.com/photo-1544441892-794166f1e3be?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&h=400&fit=crop",
-      description: "Compact cases perfect for travel and storage"
-    },
-    {
-      title: "Ring Display Boxes",
-      image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop",
-      description: "Specialized boxes for ring presentation"
-    },
-    {
-      title: "Necklace Storage Boxes",
-      image: "https://images.unsplash.com/photo-1603028825252-4e5854c6b94d?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1588444650700-6c3c2a46ede9?w=600&h=400&fit=crop",
-      description: "Anti-tangle solutions for necklace storage"
-    },
-    {
-      title: "Earring Organizers",
-      image: "https://images.unsplash.com/photo-1631214540242-214ad5a8c53d?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      description: "Organized display for earring collections"
-    },
-    {
-      title: "Custom Jewelry Boxes",
-      image: "https://images.unsplash.com/photo-1594736797933-d0200283d636?w=600&h=400&fit=crop",
-      hoverImage: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop",
-      description: "Bespoke solutions tailored to your needs"
+  const handleDiscoverMore = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
-  ];
+  };
 
   return (
-    <section className="py-12 md:py-20 bg-muted/30" id="products">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-8">
-            Our products
-          </h2>
-        </div>
-        
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {products.map((product, index) => (
-            <Card key={index} className="group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
-              <div className="aspect-[4/3] relative overflow-hidden">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:opacity-0 absolute inset-0"
-                />
-                <img 
-                  src={product.hoverImage} 
-                  alt={product.title}
-                  className="w-full h-full object-cover transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 absolute inset-0 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-white font-semibold text-base md:text-lg mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
-                    {product.title}
+    <section className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden" id="products">
+      {/* Modern background elements */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-purple-100/20 to-transparent rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent leading-tight">
+              Luxury Packaging Solutions
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Elevate your jewelry brand with our premium packaging and display solutions
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Premium Jewelry Boxes
                   </h3>
-                  <p className="text-white/80 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
-                    {product.description}
+                  <p className="text-muted-foreground leading-relaxed">
+                    Crafted with precision and attention to detail, our jewelry boxes combine functionality with luxury aesthetics to protect and showcase your precious pieces.
+                  </p>
+                </div>
+                
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Display Solutions
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Transform your retail space with our elegant display systems that highlight the beauty of your jewelry collection and enhance customer experience.
+                  </p>
+                </div>
+                
+                <div className="group">
+                  <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                    Custom Packaging
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Create a unique brand experience with our bespoke packaging solutions tailored to reflect your brand identity and values.
                   </p>
                 </div>
               </div>
-              <CardContent className="p-3 md:p-4">
-                <h3 className="font-semibold text-base md:text-lg text-foreground group-hover:text-teal-600 transition-colors duration-300">
-                  {product.title}
-                </h3>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-        
-        <div className="text-center mt-8 md:mt-12">
-          <button 
-            className="text-white px-6 md:px-8 py-3 md:py-4 rounded text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 shadow-lg"
-            style={{ backgroundColor: '#24354F' }}
-          >
-            DISCOVER MORE
-          </button>
+              
+              <div className="pt-6">
+                <button 
+                  onClick={handleDiscoverMore}
+                  className="text-white px-8 py-4 rounded-lg text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] flex items-center gap-2 group"
+                >
+                  Discover More
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+              </div>
+            </div>
+            
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
+                alt="Luxury jewelry packaging and display" 
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl relative z-10 group-hover:scale-[1.02] transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl z-20"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
