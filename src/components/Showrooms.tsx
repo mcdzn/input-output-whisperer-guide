@@ -33,17 +33,17 @@ const Showrooms = () => {
                 <img 
                   src={showroom.image} 
                   alt={showroom.title}
-                  className="w-full h-full object-cover absolute inset-0 transition-all duration-700 ease-in-out group-hover:opacity-0"
+                  className="w-full h-full object-cover absolute inset-0 transition-all duration-1000 ease-in-out group-hover:opacity-0"
                 />
                 <img 
                   src={showroom.hoverImage} 
                   alt={`${showroom.title} facility`}
-                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-700 ease-in-out group-hover:opacity-100"
+                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out group-hover:opacity-100 group-hover:delay-0"
                 />
                 <img 
                   src={showroom.factoryImage} 
                   alt={`${showroom.title} workers`}
-                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out delay-700 group-hover:opacity-100"
+                  className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-1000 ease-in-out group-hover:opacity-100 group-hover:delay-[2500ms]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>

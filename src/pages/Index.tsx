@@ -5,7 +5,6 @@ import Products from "@/components/Products";
 import Showrooms from "@/components/Showrooms";
 import Clients from "@/components/Clients";
 import QuoteForm from "@/components/QuoteForm";
-import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,7 +16,6 @@ const Index = () => {
       <Showrooms />
       <Clients />
       <QuoteForm />
-      <Contact />
       <Footer />
     </div>
   );

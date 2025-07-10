@@ -46,13 +46,12 @@ const Hero = () => {
           <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 md:mb-8 rotate-45 border-2 border-white/30"></div>
           
           <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 font-light">
-            Chúng tôi có đủ khả năng để biến ý tưởng của bạn thành thực tế.
+            We have the capability to turn your ideas into reality.
           </p>
           
           <div className="flex justify-center">
             <button 
-              className="text-white px-8 md:px-12 py-4 md:py-6 rounded text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-2"
-              style={{ backgroundColor: '#24354F' }}
+              className="text-black px-8 md:px-12 py-4 md:py-6 rounded text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-2 bg-white hover:bg-gray-100"
             >
               Request Quote
               <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
