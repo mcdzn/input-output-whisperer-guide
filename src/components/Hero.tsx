@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const handleRequestQuote = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -30,7 +40,6 @@ const Hero = () => {
             <a href="#about" className="hover:text-white/80 transition-colors text-sm md:text-base">ABOUT US</a>
             <a href="#products" className="hover:text-white/80 transition-colors text-sm md:text-base">PRODUCTS</a>
             <a href="#quote" className="hover:text-white/80 transition-colors text-sm md:text-base">GET QUOTE</a>
-            <a href="#contact" className="hover:text-white/80 transition-colors text-sm md:text-base">CONTACT</a>
           </div>
         </div>
       </nav>
@@ -51,6 +60,7 @@ const Hero = () => {
           
           <div className="flex justify-center">
             <button 
+              onClick={handleRequestQuote}
               className="text-black px-8 md:px-12 py-4 md:py-6 rounded text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-2 bg-white hover:bg-gray-100"
             >
               Request Quote
