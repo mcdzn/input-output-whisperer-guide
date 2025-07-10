@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -54,22 +52,22 @@ const QuoteForm = () => {
   };
 
   return (
-    <section className="py-20 bg-background" id="quote">
+    <section className="py-12 md:py-20 bg-background" id="quote">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 md:mb-6">
               Give us more information so we can help you.
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-base md:text-lg">
               Fill in the following fields and we will contact you within 24 hours.
             </p>
           </div>
           
           <Card className="shadow-lg border-0">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+            <CardContent className="p-4 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                   <div className="space-y-2">
                     <Label htmlFor="firstName">First Name *</Label>
                     <Input
@@ -222,13 +220,14 @@ const QuoteForm = () => {
                   </div>
                 </div>
                 
-                <div className="text-center pt-6">
-                  <Button 
+                <div className="text-center pt-4 md:pt-6">
+                  <button 
                     type="submit" 
-                    className="bg-teal-600 hover:bg-teal-700 text-white px-12 py-3 text-base font-medium"
+                    className="text-white px-8 md:px-12 py-3 md:py-4 rounded text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                    style={{ backgroundColor: '#24354F' }}
                   >
                     SUBMIT
-                  </Button>
+                  </button>
                 </div>
               </form>
             </CardContent>

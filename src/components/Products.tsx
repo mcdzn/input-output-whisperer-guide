@@ -1,6 +1,5 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 const Products = () => {
   const products = [
@@ -55,15 +54,15 @@ const Products = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted/30" id="products">
+    <section className="py-12 md:py-20 bg-muted/30" id="products">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 md:mb-8">
             Our products
           </h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {products.map((product, index) => (
             <Card key={index} className="group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2">
               <div className="aspect-[4/3] relative overflow-hidden">
@@ -79,16 +78,16 @@ const Products = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="text-white font-semibold text-lg mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  <h3 className="text-white font-semibold text-base md:text-lg mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                     {product.title}
                   </h3>
-                  <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+                  <p className="text-white/80 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
                     {product.description}
                   </p>
                 </div>
               </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-lg text-foreground group-hover:text-teal-600 transition-colors duration-300">
+              <CardContent className="p-3 md:p-4">
+                <h3 className="font-semibold text-base md:text-lg text-foreground group-hover:text-teal-600 transition-colors duration-300">
                   {product.title}
                 </h3>
               </CardContent>
@@ -96,10 +95,13 @@ const Products = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button size="lg" className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 hover:scale-105 transition-all duration-300 shadow-lg">
+        <div className="text-center mt-8 md:mt-12">
+          <button 
+            className="text-white px-6 md:px-8 py-3 md:py-4 rounded text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+            style={{ backgroundColor: '#24354F' }}
+          >
             DISCOVER MORE
-          </Button>
+          </button>
         </div>
       </div>
     </section>

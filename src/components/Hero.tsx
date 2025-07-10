@@ -17,49 +17,46 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/60" />
       
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-20 p-6">
+      <nav className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex justify-start">
             <img 
               src="/lovable-uploads/0ea2c340-388a-41ab-acff-2a1e34ad0d50.png" 
-              alt="Global Systems - Where Vision Begins" 
-              className="h-24 w-auto filter brightness-0 invert"
+              alt="Global Systems" 
+              className="h-20 md:h-32 w-auto filter brightness-0 invert"
             />
           </div>
-          <div className="hidden md:flex space-x-8 text-white">
-            <a href="#about" className="hover:text-white/80 transition-colors">ABOUT US</a>
-            <a href="#products" className="hover:text-white/80 transition-colors">PRODUCTS</a>
-            <a href="#quote" className="hover:text-white/80 transition-colors">GET QUOTE</a>
-            <a href="#contact" className="hover:text-white/80 transition-colors">CONTACT</a>
+          <div className="hidden lg:flex space-x-8 text-white">
+            <a href="#about" className="hover:text-white/80 transition-colors text-sm md:text-base">ABOUT US</a>
+            <a href="#products" className="hover:text-white/80 transition-colors text-sm md:text-base">PRODUCTS</a>
+            <a href="#quote" className="hover:text-white/80 transition-colors text-sm md:text-base">GET QUOTE</a>
+            <a href="#contact" className="hover:text-white/80 transition-colors text-sm md:text-base">CONTACT</a>
           </div>
         </div>
       </nav>
       
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-medium text-white mb-6 leading-tight">
-            LUXURY PACKAGING AND DISPLAY FOR
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
+            LUXURY PACKAGING AND DISPLAY
             <br />
-            <span className="text-3xl md:text-5xl">JEWELRY, WHERE VISION BEGINS</span>
+            <span className="text-2xl md:text-4xl lg:text-5xl">FOR JEWELRY</span>
           </h1>
           
-          <div className="w-16 h-16 mx-auto mb-8 rotate-45 border-2 border-white/30"></div>
+          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-6 md:mb-8 rotate-45 border-2 border-white/30"></div>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-4 font-light">
-            Tailor-made Elegance and Customization.
-          </p>
-          
-          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Customized Packaging Solutions and Luxury
-            <br />
-            Displays for Exclusive Brands.
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-8 font-light">
+            Chúng tôi có đủ khả năng để biến ý tưởng của bạn thành thực tế.
           </p>
           
           <div className="flex justify-center">
-            <Button size="lg" className="text-lg px-12 py-6 bg-white text-black hover:bg-white/90 hover:scale-105 transition-all duration-300 font-semibold shadow-2xl">
+            <button 
+              className="text-white px-8 md:px-12 py-4 md:py-6 rounded text-base md:text-lg font-semibold transition-all duration-300 hover:scale-105 shadow-2xl flex items-center gap-2"
+              style={{ backgroundColor: '#24354F' }}
+            >
               Request Quote
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+              <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+            </button>
           </div>
         </div>
       </div>
