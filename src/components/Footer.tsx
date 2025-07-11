@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Youtube, PinIcon as Pinterest } from "lucide-react";
+import { Facebook, Instagram, Youtube, PinIcon as Pinterest, Download } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,6 +10,18 @@ const Footer = () => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
+        {/* PDF Catalog Download Section */}
+        <div className="text-center mb-12 pb-8 border-b border-white/20">
+          <h3 className="text-2xl font-bold mb-4 text-blue-200">Download Our Catalog</h3>
+          <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            Explore our complete collection of luxury packaging solutions in our comprehensive digital catalog.
+          </p>
+          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl">
+            <Download className="w-5 h-5" />
+            <span>Download PDF Catalog</span>
+          </button>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">

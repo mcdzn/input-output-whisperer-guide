@@ -85,10 +85,10 @@ const Hero = () => {
             <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">FOR JEWELRY</span>
           </h1>
           
-          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-8 md:mb-10 rotate-45 border-2 border-white/30 hover:border-white/60 transition-all duration-500 hover:rotate-90 hover:scale-110"></div>
+          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-12 md:mb-16 rotate-45 border-2 border-white/30 hover:border-white/60 transition-all duration-500 hover:rotate-90 hover:scale-110"></div>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-12 md:mb-14 font-light animate-fade-in delay-500">
-            We have the capability to turn your ideas into reality.
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-16 md:mb-20 font-light animate-fade-in delay-500">
+            We transform your visionary ideas into exquisite, tangible realities.
           </p>
           
           <div className="flex justify-center">
