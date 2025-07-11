@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from 'react';
 
 const Showrooms = () => {
@@ -39,7 +38,7 @@ const Showrooms = () => {
           newImages[showroomIndex] = (newImages[showroomIndex] + 1) % showrooms[showroomIndex].images.length;
           return newImages;
         });
-      }, 5000); // 5 seconds auto-cycle
+      }, 3000); // Changed from 5000 to 3000 (3 seconds auto-cycle)
     }
   };
 
