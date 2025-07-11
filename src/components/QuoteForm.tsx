@@ -3,8 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import DiamondSpinner from "@/components/ui/diamond-spinner";
 
 const QuoteForm = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,12 +22,18 @@ const QuoteForm = () => {
 
   const productCategories = [
     "Bags", "Jewelry boxes", "Pouches", "Accessory", "Display", 
-    "Trays", "Mirror", "Couvette", "Jewelry case", "Rolls"
+    "Trays", "Mirror", "Cuvette", "Jewelry case", "Rolls"
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
     console.log("Quote request submitted:", formData);
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -228,10 +236,20 @@ const QuoteForm = () => {
                 <div className="text-center pt-4 md:pt-6">
                   <button 
                     type="submit" 
-                    className="text-white px-8 md:px-12 py-3 md:py-4 rounded-lg text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] group relative overflow-hidden"
+                    disabled={isSubmitting}
+                    className="text-white px-8 md:px-12 py-3 md:py-4 rounded-lg text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] group relative overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed min-w-[140px]"
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                    <span className="relative z-10">SUBMIT</span>
+                    {isSubmitting ? (
+                      <div className="flex items-center justify-center gap-2">
+                        <DiamondSpinner size="sm" />
+                        <span>SUBMITTING...</span>
+                      </div>
+                    ) : (
+                      <>
+                        <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+                        <span className="relative z-10">SUBMIT</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

@@ -24,7 +24,7 @@ const Showrooms = () => {
   ];
 
   const [currentImages, setCurrentImages] = useState([0, 0]);
-  const [isHovered, setIsHovered] = useState([false, false]);
+  const [isPaused, setIsPaused] = useState([false, false]);
   const intervalRefs = useRef<(NodeJS.Timeout | null)[]>([null, null]);
 
   const startImageCycle = (showroomIndex: number) => {
@@ -32,13 +32,15 @@ const Showrooms = () => {
       clearInterval(intervalRefs.current[showroomIndex]!);
     }
     
-    intervalRefs.current[showroomIndex] = setInterval(() => {
-      setCurrentImages(prev => {
-        const newImages = [...prev];
-        newImages[showroomIndex] = (newImages[showroomIndex] + 1) % showrooms[showroomIndex].images.length;
-        return newImages;
-      });
-    }, 1800);
+    if (!isPaused[showroomIndex]) {
+      intervalRefs.current[showroomIndex] = setInterval(() => {
+        setCurrentImages(prev => {
+          const newImages = [...prev];
+          newImages[showroomIndex] = (newImages[showroomIndex] + 1) % showrooms[showroomIndex].images.length;
+          return newImages;
+        });
+      }, 5000); // 5 seconds auto-cycle
+    }
   };
 
   const stopImageCycle = (showroomIndex: number) => {
@@ -49,34 +51,35 @@ const Showrooms = () => {
   };
 
   const handleMouseEnter = (showroomIndex: number) => {
-    setIsHovered(prev => {
-      const newHovered = [...prev];
-      newHovered[showroomIndex] = true;
-      return newHovered;
-    });
-    startImageCycle(showroomIndex);
-  };
-
-  const handleMouseLeave = (showroomIndex: number) => {
-    setIsHovered(prev => {
-      const newHovered = [...prev];
-      newHovered[showroomIndex] = false;
-      return newHovered;
+    setIsPaused(prev => {
+      const newPaused = [...prev];
+      newPaused[showroomIndex] = true;
+      return newPaused;
     });
     stopImageCycle(showroomIndex);
   };
 
-  const handleTouchStart = (showroomIndex: number) => {
-    handleMouseEnter(showroomIndex);
+  const handleMouseLeave = (showroomIndex: number) => {
+    setIsPaused(prev => {
+      const newPaused = [...prev];
+      newPaused[showroomIndex] = false;
+      return newPaused;
+    });
+    startImageCycle(showroomIndex);
   };
 
   useEffect(() => {
+    // Start auto-cycling for both showrooms
+    showrooms.forEach((_, index) => {
+      startImageCycle(index);
+    });
+
     return () => {
       intervalRefs.current.forEach(interval => {
         if (interval) clearInterval(interval);
       });
     };
-  }, []);
+  }, [isPaused]);
 
   const handleScheduleVisit = () => {
     const quoteSection = document.getElementById('quote');
@@ -111,7 +114,6 @@ const Showrooms = () => {
               className="group transform hover:scale-[1.02] transition-all duration-300"
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
-              onTouchStart={() => handleTouchStart(index)}
             >
               <div className="aspect-[4/5] relative overflow-hidden rounded-2xl mb-6 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200">
                 {showroom.images.map((image, imageIndex) => (
@@ -119,22 +121,31 @@ const Showrooms = () => {
                     key={imageIndex}
                     src={image} 
                     alt={`${showroom.title} ${imageIndex + 1}`}
-                    className={`w-full h-full object-cover absolute inset-0 transition-all duration-300 ease-in-out ${
+                    className={`w-full h-full object-cover absolute inset-0 transition-all duration-500 ease-in-out ${
                       currentImages[index] === imageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
                     }`}
                   />
                 ))}
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent transition-opacity duration-300 ${
-                  isHovered[index] ? 'opacity-100' : 'opacity-0'
-                }`} />
                 
+                {/* Overlay with animated text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <h4 className="text-white font-semibold text-lg mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                    {showroom.title} Facility
+                  </h4>
+                  <p className="text-white/90 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
+                    State-of-the-art manufacturing excellence
+                  </p>
+                </div>
+                
+                {/* Dots indicator */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                   {showroom.images.map((_, dotIndex) => (
                     <div
                       key={dotIndex}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         currentImages[index] === dotIndex 
-                          ? 'bg-white shadow-lg' 
+                          ? 'bg-white shadow-lg scale-125' 
                           : 'bg-white/50'
                       }`}
                     />

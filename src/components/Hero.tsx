@@ -34,9 +34,9 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with modern overlay */}
+      {/* Background Image with modern overlay and subtle animation */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-gentle-sway"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
         }}
@@ -46,9 +46,9 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/50" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
       
-      {/* Animated background elements */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      {/* Animated background elements with sparkle effect */}
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl animate-sparkle"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-blue-400/10 rounded-full blur-3xl animate-sparkle-delayed"></div>
       
       {/* Navigation */}
       <nav className="absolute top-0 left-0 right-0 z-20 p-4 md:p-6">
@@ -94,7 +94,7 @@ const Hero = () => {
           <div className="flex justify-center">
             <button 
               onClick={handleRequestQuote}
-              className={`text-black px-8 md:px-12 py-4 md:py-6 rounded-lg text-base md:text-lg font-semibold transition-all duration-500 shadow-2xl flex items-center gap-2 bg-white hover:bg-gray-100 hover:shadow-3xl relative overflow-hidden group ${
+              className={`text-black px-8 md:px-12 py-4 md:py-6 rounded-lg text-base md:text-lg font-semibold transition-all duration-500 shadow-2xl flex items-center gap-2 bg-white hover:bg-gradient-to-r hover:from-blue-50 hover:to-white hover:shadow-3xl relative overflow-hidden group animate-gentle-pulse ${
                 isAnimating ? 'animate-pulse scale-110' : 'hover:scale-105'
               }`}
             >

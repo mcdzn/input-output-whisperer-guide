@@ -103,3 +103,74 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom animations for luxury interactions */
+@layer utilities {
+  @keyframes gentle-sway {
+    0%, 100% { transform: translateX(0) scale(1); }
+    25% { transform: translateX(1px) scale(1.001); }
+    50% { transform: translateX(0) scale(1.002); }
+    75% { transform: translateX(-1px) scale(1.001); }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.1; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.05); }
+  }
+
+  @keyframes sparkle-delayed {
+    0%, 100% { opacity: 0.05; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(1.03); }
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+    50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+  }
+
+  @keyframes spin-diamond {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-gentle-sway {
+    animation: gentle-sway 3s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-sparkle-delayed {
+    animation: sparkle-delayed 2.5s ease-in-out infinite 0.5s;
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-spin-diamond {
+    animation: spin-diamond 1s linear infinite;
+  }
+
+  /* Disable animations on mobile for performance */
+  @media (max-width: 768px) {
+    .animate-gentle-sway,
+    .animate-sparkle,
+    .animate-sparkle-delayed,
+    .animate-gentle-pulse {
+      animation: none;
+    }
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gentle-sway,
+    .animate-sparkle,
+    .animate-sparkle-delayed,
+    .animate-gentle-pulse,
+    .animate-spin-diamond {
+      animation: none;
+    }
+  }
+}
