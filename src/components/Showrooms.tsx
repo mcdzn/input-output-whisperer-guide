@@ -110,7 +110,7 @@ const Showrooms = () => {
           {showrooms.map((showroom, index) => (
             <div 
               key={index} 
-              className="group transform hover:scale-[1.02] transition-all duration-300"
+              className="group transform md:hover:scale-[1.02] transition-all duration-300"
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={() => handleMouseLeave(index)}
             >
@@ -121,7 +121,7 @@ const Showrooms = () => {
                     src={image} 
                     alt={`${showroom.title} ${imageIndex + 1}`}
                     className={`w-full h-full object-cover absolute inset-0 transition-all duration-500 ease-in-out ${
-                      currentImages[index] === imageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                      currentImages[index] === imageIndex ? 'opacity-100 scale-100' : 'opacity-0 md:scale-105'
                     }`}
                   />
                 ))}
@@ -160,7 +160,7 @@ const Showrooms = () => {
                 </p>
                 <button 
                   onClick={handleScheduleVisit}
-                  className="text-white px-6 py-4 md:px-8 md:py-4 rounded-lg text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] transform active:scale-95 w-full md:w-auto"
+                  className="text-white px-6 py-4 md:px-8 md:py-4 rounded-lg text-sm md:text-base font-medium transition-all duration-300 md:hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] transform active:scale-95 w-full md:w-auto"
                 >
                   SCHEDULE YOUR VISIT TO OUR SHOWROOM IN {showroom.title.toUpperCase()}
                 </button>

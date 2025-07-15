@@ -30,8 +30,8 @@ const About = () => {
     <section className="py-20 bg-background" id="about">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Features */}
-          <div>
+          {/* Mobile: Main content first, Desktop: Features first */}
+          <div className="order-2 lg:order-1">
             <div className="space-y-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -51,8 +51,8 @@ const About = () => {
             </div>
           </div>
           
-          {/* Right side - Main content */}
-          <div>
+          {/* Mobile: Features first, Desktop: Main content second */}
+          <div className="order-1 lg:order-2">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
               Everything a jewelry store needs
             </h2>
