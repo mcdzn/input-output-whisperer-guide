@@ -1,135 +1,172 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const Showrooms = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const showrooms = [
     {
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
       title: "Vietnam",
-      description: "Visit our state-of-the-art manufacturing facility where precision meets artistry",
-      buttonText: "SCHEDULE YOUR VISIT TO OUR SHOWROOM IN VIETNAM"
+      images: [
+        "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+        "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+        "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png"
+      ],
+      description: "Visit our state-of-the-art manufacturing facility where precision meets artistry"
     },
     {
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      title: "China",
-      description: "Experience excellence in our flagship production center dedicated to luxury craftsmanship",
-      buttonText: "SCHEDULE YOUR VISIT TO OUR SHOWROOM IN CHINA"
+      title: "China", 
+      images: [
+        "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+        "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+        "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png"
+      ],
+      description: "Experience excellence in our flagship production center dedicated to luxury craftsmanship"
     }
   ];
 
-  // Auto-slide functionality
+  const [currentImages, setCurrentImages] = useState([0, 0]);
+  const [isPaused, setIsPaused] = useState([false, false]);
+  const intervalRefs = useRef<(NodeJS.Timeout | null)[]>([null, null]);
+
+  const startImageCycle = (showroomIndex: number) => {
+    if (intervalRefs.current[showroomIndex]) {
+      clearInterval(intervalRefs.current[showroomIndex]!);
+    }
+    
+    if (!isPaused[showroomIndex]) {
+      intervalRefs.current[showroomIndex] = setInterval(() => {
+        setCurrentImages(prev => {
+          const newImages = [...prev];
+          newImages[showroomIndex] = (newImages[showroomIndex] + 1) % showrooms[showroomIndex].images.length;
+          return newImages;
+        });
+      }, 3000); // Changed from 5000 to 3000 (3 seconds auto-cycle)
+    }
+  };
+
+  const stopImageCycle = (showroomIndex: number) => {
+    if (intervalRefs.current[showroomIndex]) {
+      clearInterval(intervalRefs.current[showroomIndex]!);
+      intervalRefs.current[showroomIndex] = null;
+    }
+  };
+
+  const handleMouseEnter = (showroomIndex: number) => {
+    setIsPaused(prev => {
+      const newPaused = [...prev];
+      newPaused[showroomIndex] = true;
+      return newPaused;
+    });
+    stopImageCycle(showroomIndex);
+  };
+
+  const handleMouseLeave = (showroomIndex: number) => {
+    setIsPaused(prev => {
+      const newPaused = [...prev];
+      newPaused[showroomIndex] = false;
+      return newPaused;
+    });
+    startImageCycle(showroomIndex);
+  };
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % showrooms.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [showrooms.length]);
+    // Start auto-cycling for both showrooms
+    showrooms.forEach((_, index) => {
+      startImageCycle(index);
+    });
+
+    return () => {
+      intervalRefs.current.forEach(interval => {
+        if (interval) clearInterval(interval);
+      });
+    };
+  }, [isPaused]);
+
+  const handleScheduleVisit = () => {
+    const quoteSection = document.getElementById('quote');
+    if (quoteSection) {
+      quoteSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden" id="showrooms">
-      {/* Background elements */}
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-50/30 to-purple-50/30"></div>
-      <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-r from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-l from-purple-100/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-l from-blue-100/20 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-r from-purple-100/20 to-transparent rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-            Our Showrooms
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
+            Our showrooms
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Visit our world-class facilities and experience luxury packaging excellence firsthand
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Discover our world-class facilities where innovation meets traditional craftsmanship
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto relative">
-          {/* Carousel container */}
-          <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-            {showrooms.map((showroom, index) => (
-              <div 
-                key={index}
-                className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
-                  index === currentSlide ? 'translate-x-0' : 
-                  index < currentSlide ? '-translate-x-full' : 'translate-x-full'
-                }`}
-              >
-                <img 
-                  src={showroom.image}
-                  alt={showroom.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+          {showrooms.map((showroom, index) => (
+            <div 
+              key={index} 
+              className="group transform md:hover:scale-[1.02] transition-all duration-300"
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={() => handleMouseLeave(index)}
+            >
+              <div className="aspect-[4/5] relative overflow-hidden rounded-2xl mb-6 shadow-2xl hover:shadow-3xl transition-all duration-300 bg-gradient-to-br from-gray-100 to-gray-200">
+                {showroom.images.map((image, imageIndex) => (
+                  <img 
+                    key={imageIndex}
+                    src={image} 
+                    alt={`${showroom.title} ${imageIndex + 1}`}
+                    className={`w-full h-full object-cover absolute inset-0 transition-all duration-500 ease-in-out ${
+                      currentImages[index] === imageIndex ? 'opacity-100 scale-100' : 'opacity-0 md:scale-105'
+                    }`}
+                  />
+                ))}
                 
-                {/* Content overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 text-center">
-                  <h3 className="text-white text-3xl md:text-4xl font-bold mb-4">
-                    {showroom.title}
-                  </h3>
-                  <p className="text-white/90 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl mx-auto">
-                    {showroom.description}
+                {/* Overlay with animated text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <h4 className="text-white font-semibold text-lg mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
+                    {showroom.title} Facility
+                  </h4>
+                  <p className="text-white/90 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-300">
+                    State-of-the-art manufacturing excellence
                   </p>
-                  <button className="bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 hover:shadow-xl shadow-lg text-sm md:text-base">
-                    {showroom.buttonText}
-                  </button>
+                </div>
+                
+                {/* Dots indicator */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {showroom.images.map((_, dotIndex) => (
+                    <div
+                      key={dotIndex}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        currentImages[index] === dotIndex 
+                          ? 'bg-white shadow-lg scale-125' 
+                          : 'bg-white/50'
+                      }`}
+                    />
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Navigation dots */}
-          <div className="flex justify-center mt-8 space-x-3">
-            {showrooms.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-[#24354F] scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
-        
-        {/* Additional content section */}
-        <div className="mt-16 text-center space-y-8">
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Global Manufacturing Excellence
-              </h3>
-              <p className="text-muted-foreground leading-relaxed text-lg max-w-3xl mx-auto">
-                Our state-of-the-art facilities across Asia ensure the highest quality standards and sustainable manufacturing practices.
-              </p>
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-foreground mb-4 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                  {showroom.title}
+                </h3>
+                <p className="text-muted-foreground mb-6 text-sm md:text-base leading-relaxed">
+                  {showroom.description}
+                </p>
+                <button 
+                  onClick={handleScheduleVisit}
+                  className="text-white px-6 py-4 md:px-8 md:py-4 rounded-lg text-sm md:text-base font-medium transition-all duration-300 md:hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] transform active:scale-95 w-full md:w-auto"
+                >
+                  SCHEDULE YOUR VISIT TO OUR SHOWROOM IN {showroom.title.toUpperCase()}
+                </button>
+              </div>
             </div>
-            
-            <div>
-              <h4 className="text-xl font-semibold text-foreground mb-3">
-                Why Visit Our Showrooms?
-              </h4>
-              <ul className="space-y-2 text-muted-foreground max-w-2xl mx-auto">
-                <li className="flex items-start justify-center">
-                  <span className="text-blue-600 mr-2">•</span>
-                  Experience our luxury packaging solutions firsthand
-                </li>
-                <li className="flex items-start justify-center">
-                  <span className="text-blue-600 mr-2">•</span>
-                  Meet our expert design and manufacturing teams
-                </li>
-                <li className="flex items-start justify-center">
-                  <span className="text-blue-600 mr-2">•</span>
-                  Explore customization options for your brand
-                </li>
-                <li className="flex items-start justify-center">
-                  <span className="text-blue-600 mr-2">•</span>
-                  Witness our commitment to sustainable practices
-                </li>
-              </ul>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

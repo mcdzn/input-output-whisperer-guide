@@ -1,7 +1,4 @@
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { useEffect, useRef } from "react";
-
 const ProductGrid = () => {
   const products = [
     {
@@ -63,31 +60,30 @@ const ProductGrid = () => {
           </h2>
         </div>
         
-        {/* Mobile Grid */}
-        <div className="md:hidden grid grid-cols-2 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-7xl mx-auto">
           {products.map((product, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:shadow-blue-200/30">
-                <div className="relative w-full h-32">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 md:group-hover:scale-110 group-hover:shadow-blue-200/30">
+                <div className="relative w-full h-48 md:h-64">
                   <img 
                     src={product.image}
                     alt={product.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-100 group-hover:opacity-0"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-100 group-hover:opacity-0 md:group-hover:scale-110"
                   />
                   <img 
                     src={product.hoverImage}
                     alt={product.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0 group-hover:opacity-100"
+                    className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0 group-hover:opacity-100 md:scale-110 md:group-hover:scale-100"
                   />
                   {/* Glow border effect */}
                   <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-300/50 group-hover:shadow-lg group-hover:shadow-blue-300/30 transition-all duration-300"></div>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-semibold text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 mb-1">
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white font-semibold text-sm md:text-lg opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 mb-1 md:mb-2">
                     {product.title}
                   </h3>
-                  <p className="text-white/90 text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+                  <p className="text-white/90 text-xs md:text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
                     {product.description}
                   </p>
                 </div>
@@ -95,57 +91,9 @@ const ProductGrid = () => {
             </div>
           ))}
         </div>
-
-        {/* Desktop Carousel */}
-        <div className="hidden md:block">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-              slidesToScroll: 2,
-            }}
-            className="w-full max-w-7xl mx-auto"
-          >
-            <CarouselContent className="-ml-1">
-              {products.map((product, index) => (
-                <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-1/4">
-                  <div className="group cursor-pointer">
-                    <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-blue-200/30">
-                      <div className="relative w-full h-64">
-                        <img 
-                          src={product.image}
-                          alt={product.title}
-                          className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-100 group-hover:opacity-0 group-hover:scale-110"
-                        />
-                        <img 
-                          src={product.hoverImage}
-                          alt={product.title}
-                          className="absolute inset-0 w-full h-full object-cover transition-all duration-300 opacity-0 group-hover:opacity-100 scale-110 group-hover:scale-100"
-                        />
-                        {/* Glow border effect */}
-                        <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-blue-300/50 group-hover:shadow-lg group-hover:shadow-blue-300/30 transition-all duration-300"></div>
-                      </div>
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <h3 className="text-white font-semibold text-lg opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100 mb-2">
-                          {product.title}
-                        </h3>
-                        <p className="text-white/90 text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 delay-150">
-                          {product.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
         
         <div className="text-center mt-12">
-          <button className="bg-[#24354F] hover:bg-[#1a2a3f] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 md:hover:scale-105 hover:shadow-xl mx-auto block">
+          <button className="bg-[#24354F] hover:bg-[#1a2a3f] text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 md:hover:scale-105 hover:shadow-xl">
             View All Products
           </button>
         </div>

@@ -61,10 +61,10 @@ const Products = () => {
                 </div>
               </div>
               
-              <div className="pt-6 text-center md:text-left">
+              <div className="pt-6">
                 <button 
                   onClick={handleDiscoverMore}
-                  className="text-white px-8 py-4 rounded-lg text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] flex items-center gap-2 group mx-auto md:mx-0"
+                  className="text-white px-8 py-4 rounded-lg text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg bg-gradient-to-r from-[#24354F] to-[#1a2a3f] hover:from-[#1a2a3f] hover:to-[#24354F] flex items-center gap-2 group"
                 >
                   Discover More
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
