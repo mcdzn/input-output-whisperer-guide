@@ -64,7 +64,7 @@ const ProductGrid = () => {
           {products.map((product, index) => (
             <div key={index} className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 md:group-hover:scale-110 group-hover:shadow-blue-200/30">
-                <div className="relative w-full h-48 md:h-64">
+                <div className="relative w-full h-32 md:h-64">
                   <img 
                     src={product.image}
                     alt={product.title}
