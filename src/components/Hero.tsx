@@ -79,15 +79,15 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight animate-fade-in">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-normal text-white mb-8 md:mb-10 leading-tight animate-fade-in">
             LUXURY PACKAGING AND DISPLAY
             <br />
             <span className="text-2xl md:text-4xl lg:text-5xl bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">FOR JEWELRY</span>
           </h1>
           
-          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-12 md:mb-16 rotate-45 border-2 border-white/30 hover:border-white/60 transition-all duration-500 hover:rotate-90 hover:scale-110"></div>
+          <div className="w-12 h-12 md:w-16 md:h-16 mx-auto mb-16 md:mb-20 rotate-45 border-2 border-white/30 hover:border-white/60 transition-all duration-500 hover:rotate-90 hover:scale-110"></div>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-16 md:mb-20 font-light animate-fade-in delay-500">
+          <p className="text-lg md:text-xl lg:text-2xl text-white/90 mb-20 md:mb-24 font-light animate-fade-in delay-500">
             We transform your visionary ideas into exquisite, tangible realities.
           </p>
           
