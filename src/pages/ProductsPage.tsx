@@ -2,6 +2,7 @@ import { ArrowLeft, Package, Sparkles, Crown, Gift } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 
 const ProductsPage = () => {
   const productCategories = [
@@ -138,6 +139,8 @@ const ProductsPage = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };
