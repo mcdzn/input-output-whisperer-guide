@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const [isAnimating, setIsAnimating] = useState(false);
@@ -60,19 +61,22 @@ const Hero = () => {
               className="h-20 md:h-32 w-auto filter brightness-0 invert hover:scale-105 transition-transform duration-300"
             />
           </div>
-          <div className="hidden lg:flex space-x-8 text-white">
-            <a href="#about" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
+          <div className="hidden lg:flex items-center space-x-8 text-white">
+            <Link to="/about" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
               ABOUT US
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#products" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
-              PRODUCTS
+            </Link>
+            <Link to="/products" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
+              JEWELRY PRODUCTS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#quote" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
-              GET QUOTE
+            </Link>
+            <Link to="/contact" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
+              CONTACT US / FAQ
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
-            </a>
+            </Link>
+            <Link to="/search" className="hover:text-blue-200 transition-all duration-300 p-2 rounded-full hover:bg-white/10 group">
+              <Search className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </nav>
