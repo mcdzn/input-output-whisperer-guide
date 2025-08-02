@@ -4,62 +4,72 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 
+// Import jewelry display images
+import showcasesDisplaysImg from "@/assets/showcases-displays.jpg";
+import jewelryBoxesImg from "@/assets/jewelry-boxes.jpg";
+import jewelryOrganizationImg from "@/assets/jewelry-organization.jpg";
+import ringDisplaysImg from "@/assets/ring-displays.jpg";
+import earringDisplaysImg from "@/assets/earring-displays.jpg";
+import braceletDisplaysImg from "@/assets/bracelet-displays.jpg";
+import necklaceDisplaysImg from "@/assets/necklace-displays.jpg";
+import watchDisplaysImg from "@/assets/watch-displays.jpg";
+
 const ProductsPage = () => {
   const productCategories = [
     {
       icon: Package,
       title: "Showcases & Displays",
       description: "Premium showcases and display solutions for professional jewelry presentation",
-      image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
+      image: showcasesDisplaysImg,
       route: "showcases-displays"
     },
     {
       icon: Gift,
       title: "Jewelry Boxes",
       description: "Elegant jewelry boxes in various materials and finishes",
-      image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
+      image: jewelryBoxesImg,
       route: "jewelry-boxes"
     },
     {
       icon: Crown,
       title: "Jewelry Organization",
       description: "Organizational solutions for efficient jewelry storage and display",
-      image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
+      image: jewelryOrganizationImg,
       route: "jewelry-organization"
     },
     {
       icon: Sparkles,
       title: "Ring Displays",
       description: "Specialized display stands and holders for rings",
-      image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+      image: ringDisplaysImg,
       route: "ring-displays"
     },
     {
       icon: Crown,
       title: "Earring Displays",
       description: "Professional earring display solutions and stands",
-      image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+      image: earringDisplaysImg,
       route: "earring-displays"
     },
     {
       icon: Package,
       title: "Bracelet Displays",
       description: "Elegant bracelet display stands and organizers",
-      image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+      image: braceletDisplaysImg,
       route: "bracelet-displays"
     },
     {
       icon: Sparkles,
       title: "Necklace Displays",
       description: "Professional necklace display busts and stands",
-      image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+      image: necklaceDisplaysImg,
       route: "necklace-displays"
     },
     {
       icon: Gift,
       title: "Watch Displays",
       description: "Luxury watch display cases and presentation boxes",
-      image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+      image: watchDisplaysImg,
       route: "watch-displays"
     }
   ];
