@@ -1,11 +1,25 @@
+import { useState } from "react";
 import { ArrowLeft, Package } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
+import QuoteSidebar from "@/components/QuoteSidebar";
 
 const ProductShowcasePage = () => {
   const { category } = useParams();
+  const [isQuoteSidebarOpen, setIsQuoteSidebarOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<{name: string, category: string} | null>(null);
+  
+  const openQuoteSidebar = (productName: string, categoryTitle: string) => {
+    setSelectedProduct({ name: productName, category: categoryTitle });
+    setIsQuoteSidebarOpen(true);
+  };
+  
+  const closeQuoteSidebar = () => {
+    setIsQuoteSidebarOpen(false);
+    setSelectedProduct(null);
+  };
   
   const showcaseData = {
     "showcases-displays": {
@@ -271,7 +285,11 @@ const ProductShowcasePage = () => {
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {product.description}
                   </p>
-                  <Button variant="outline" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    className="w-full"
+                    onClick={() => openQuoteSidebar(product.name, currentCategory.title)}
+                  >
                     Request Quote
                   </Button>
                 </CardContent>
@@ -291,7 +309,10 @@ const ProductShowcasePage = () => {
             Our design team can create bespoke {currentCategory.title.toLowerCase()} tailored to your specific requirements and brand identity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg">
+            <Button 
+              size="lg"
+              onClick={() => openQuoteSidebar("Custom Solution", currentCategory.title)}
+            >
               Get Custom Quote
             </Button>
             <Button variant="outline" size="lg" asChild>
@@ -302,6 +323,14 @@ const ProductShowcasePage = () => {
       </section>
       
       <Footer />
+      
+      {/* Quote Sidebar */}
+      <QuoteSidebar 
+        isOpen={isQuoteSidebarOpen}
+        onClose={closeQuoteSidebar}
+        productName={selectedProduct?.name}
+        productCategory={selectedProduct?.category}
+      />
     </div>
   );
 };
