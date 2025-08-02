@@ -81,50 +81,89 @@ const AboutPage = () => {
       {/* Company Story */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-              Our Story
+              About Global Systems
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  Crafting Excellence Since Day One
+                  Leading Jewelry Packaging Innovation Since 2010
                 </h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Global Systems has been at the forefront of luxury packaging and display solutions, 
-                  specializing in creating stunning presentations for jewelry collections worldwide.
+                  Global Systems is a premier manufacturer and supplier of luxury jewelry packaging and display solutions. 
+                  Founded with a passion for elevating the jewelry retail experience, we specialize in creating bespoke 
+                  packaging that enhances brand identity and protects precious jewelry pieces.
                 </p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Our journey began with a simple vision: to transform the way luxury products are 
-                  presented and experienced. Today, we serve clients across the globe, maintaining 
-                  the highest standards of quality and innovation.
+                  Our state-of-the-art manufacturing facilities in Vietnam and China employ cutting-edge technology 
+                  combined with traditional craftsmanship. We serve over 500+ jewelry brands worldwide, from 
+                  boutique artisans to international luxury houses.
                 </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  With showrooms in Vietnam and China, we combine traditional craftsmanship with 
-                  modern design principles to deliver exceptional results that exceed expectations.
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  With expertise in materials like velvet, leather, wood, and premium metals, we create packaging 
+                  solutions that tell your brand's story while ensuring the safety and presentation of your jewelry.
                 </p>
+                <div className="bg-primary/10 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-foreground mb-3">Our Commitment</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                      Sustainable manufacturing practices
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                      100% customizable solutions
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
+                      Fast global shipping & support
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <div className="bg-primary/10 rounded-lg p-8">
-                <h4 className="text-xl font-semibold text-foreground mb-4">Why Choose Us?</h4>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    Decades of industry experience
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    Custom solutions tailored to your needs
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    International presence and support
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
-                    Commitment to sustainable practices
-                  </li>
-                </ul>
+              <div className="relative">
+                <div className="aspect-video rounded-lg overflow-hidden shadow-xl">
+                  <video 
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                    className="w-full h-full object-cover"
+                  >
+                    <source src="https://player.vimeo.com/external/373465330.sd.mp4?s=5bb2bc62b3e17d44b9b5e25d7e6e3e4e5c45f6e6&profile_id=164&oauth2_token_id=57447761" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm font-medium">Jewelry Manufacturing Process</p>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Statistics */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</h3>
+              <p className="text-muted-foreground">Happy Clients</p>
+            </div>
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</h3>
+              <p className="text-muted-foreground">Countries Served</p>
+            </div>
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">13+</h3>
+              <p className="text-muted-foreground">Years Experience</p>
+            </div>
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">10k+</h3>
+              <p className="text-muted-foreground">Products Delivered</p>
             </div>
           </div>
         </div>

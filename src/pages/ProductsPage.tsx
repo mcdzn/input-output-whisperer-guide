@@ -7,32 +7,60 @@ import Footer from "@/components/Footer";
 const ProductsPage = () => {
   const productCategories = [
     {
-      icon: Crown,
-      title: "Luxury Display Cases",
-      description: "Premium display cases designed to showcase your finest jewelry pieces with elegance and security.",
+      icon: Package,
+      title: "Showcases & Displays",
+      description: "Premium showcases and display solutions for professional jewelry presentation",
       image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
-      features: ["LED Lighting", "Security Lock", "Velvet Interior", "Custom Branding"]
+      route: "showcases-displays"
     },
     {
       icon: Gift,
-      title: "Gift Packaging",
-      description: "Exquisite packaging solutions that enhance the unboxing experience for your customers.",
+      title: "Jewelry Boxes",
+      description: "Elegant jewelry boxes in various materials and finishes",
       image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
-      features: ["Custom Design", "Premium Materials", "Branded Inserts", "Gift Cards"]
+      route: "jewelry-boxes"
     },
     {
-      icon: Package,
-      title: "Storage Solutions",
-      description: "Organized storage systems for jewelry collections, combining functionality with aesthetic appeal.",
+      icon: Crown,
+      title: "Jewelry Organization",
+      description: "Organizational solutions for efficient jewelry storage and display",
       image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
-      features: ["Modular Design", "Soft Compartments", "Stackable", "Moisture Control"]
+      route: "jewelry-organization"
     },
     {
       icon: Sparkles,
-      title: "Custom Displays",
-      description: "Bespoke display solutions tailored to your specific requirements and brand identity.",
+      title: "Ring Displays",
+      description: "Specialized display stands and holders for rings",
       image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
-      features: ["3D Design", "Prototype Testing", "Brand Integration", "Flexible Sizing"]
+      route: "ring-displays"
+    },
+    {
+      icon: Crown,
+      title: "Earring Displays",
+      description: "Professional earring display solutions and stands",
+      image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+      route: "earring-displays"
+    },
+    {
+      icon: Package,
+      title: "Bracelet Displays",
+      description: "Elegant bracelet display stands and organizers",
+      image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+      route: "bracelet-displays"
+    },
+    {
+      icon: Sparkles,
+      title: "Necklace Displays",
+      description: "Professional necklace display busts and stands",
+      image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+      route: "necklace-displays"
+    },
+    {
+      icon: Gift,
+      title: "Watch Displays",
+      description: "Luxury watch display cases and presentation boxes",
+      image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+      route: "watch-displays"
     }
   ];
 
@@ -63,58 +91,45 @@ const ProductsPage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-primary/10 to-background">
+      <section className="pt-24 pb-12 bg-gradient-to-br from-primary to-primary/80">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-            Jewelry <span className="text-primary">Products</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            PRODUCTS FOR JEWELRY STORES
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Discover our comprehensive range of luxury packaging and display solutions, 
-            meticulously crafted for the jewelry industry.
-          </p>
-          <Button onClick={handleRequestQuote} size="lg" className="shadow-lg">
-            Request Custom Quote
-          </Button>
+          <div className="flex items-center justify-center gap-2 text-white/80 text-sm">
+            <Link to="/" className="hover:text-white transition-colors">Homepage</Link>
+            <span>›</span>
+            <span>Jewelry products</span>
+          </div>
         </div>
       </section>
 
       {/* Product Categories */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {productCategories.map((category, index) => (
-              <Card key={index} className="border-border hover:shadow-xl transition-all duration-300 overflow-hidden group">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={category.image} 
-                    alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <category.icon className="w-8 h-8 text-primary" />
-                    <h3 className="text-2xl font-semibold text-foreground">{category.title}</h3>
+              <Link 
+                key={index} 
+                to={`/products/${category.route}`}
+                className="group block"
+              >
+                <Card className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden bg-white">
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={category.image} 
+                      alt={category.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {category.description}
-                  </p>
-                  <div className="space-y-2 mb-6">
-                    <h4 className="font-semibold text-foreground">Key Features:</h4>
-                    <ul className="grid grid-cols-2 gap-2">
-                      {category.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <Button variant="outline" className="w-full">
-                    Learn More
-                  </Button>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-4 text-center">
+                    <h3 className="text-lg font-medium text-foreground mb-2">{category.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {category.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
