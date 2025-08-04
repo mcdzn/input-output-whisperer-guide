@@ -93,7 +93,7 @@ const QuoteSidebar = ({ isOpen, onClose, productName, productCategory }: QuoteSi
           </div>
 
           {/* Form */}
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-scroll p-6" style={{ scrollbarWidth: 'thin' }}>
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Product Info */}
               {productName && (
@@ -173,7 +173,7 @@ const QuoteSidebar = ({ isOpen, onClose, productName, productCategory }: QuoteSi
                       <SelectTrigger>
                         <SelectValue placeholder="Select quantity range" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-background border z-[60]">
                         <SelectItem value="1-50">1-50 pieces</SelectItem>
                         <SelectItem value="51-100">51-100 pieces</SelectItem>
                         <SelectItem value="101-500">101-500 pieces</SelectItem>
@@ -189,7 +189,7 @@ const QuoteSidebar = ({ isOpen, onClose, productName, productCategory }: QuoteSi
                       <SelectTrigger>
                         <SelectValue placeholder="When do you need this?" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-background border z-[60]">
                         <SelectItem value="urgent">ASAP (Rush Order)</SelectItem>
                         <SelectItem value="1-2weeks">1-2 weeks</SelectItem>
                         <SelectItem value="3-4weeks">3-4 weeks</SelectItem>
@@ -205,7 +205,7 @@ const QuoteSidebar = ({ isOpen, onClose, productName, productCategory }: QuoteSi
                       <SelectTrigger>
                         <SelectValue placeholder="Level of customization" />
                       </SelectTrigger>
-                      <SelectContent>
+                      <SelectContent className="bg-background border z-[60]">
                         <SelectItem value="none">No customization</SelectItem>
                         <SelectItem value="logo">Logo/branding only</SelectItem>
                         <SelectItem value="colors">Custom colors</SelectItem>

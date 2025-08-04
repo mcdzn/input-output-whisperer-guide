@@ -6,6 +6,40 @@ import { Button } from "@/components/ui/button";
 import Footer from "@/components/Footer";
 import QuoteSidebar from "@/components/QuoteSidebar";
 
+// Import professional jewelry display images
+import ledJewelryShowcase from "@/assets/led-jewelry-showcase.jpg";
+import rotatingDisplayCase from "@/assets/rotating-display-case.jpg";
+import wallMountedDisplay from "@/assets/wall-mounted-display.jpg";
+import counterDisplayUnit from "@/assets/counter-display-unit.jpg";
+import velvetRingBox from "@/assets/velvet-ring-box.jpg";
+import woodenJewelryBox from "@/assets/wooden-jewelry-box.jpg";
+import leatherGiftBox from "@/assets/leather-gift-box.jpg";
+import customBrandedBox from "@/assets/custom-branded-box.jpg";
+import jewelryTrayInsert from "@/assets/jewelry-tray-insert.jpg";
+import storageCabinet from "@/assets/storage-cabinet.jpg";
+import travelOrganizer from "@/assets/travel-organizer.jpg";
+import modularSystem from "@/assets/modular-system.jpg";
+import ringDisplayStand from "@/assets/ring-display-stand.jpg";
+import multiRingDisplay from "@/assets/multi-ring-display.jpg";
+import fingerFormDisplay from "@/assets/finger-form-display.jpg";
+import rotatingRingDisplay from "@/assets/rotating-ring-display.jpg";
+import earringDisplayCards from "@/assets/earring-display-cards.jpg";
+import earringTreeStand from "@/assets/earring-tree-stand.jpg";
+import rotatingEarringDisplay from "@/assets/rotating-earring-display.jpg";
+import wallMountedEarringDisplay from "@/assets/wall-mounted-earring-display.jpg";
+import braceletDisplayRamp from "@/assets/bracelet-display-ramp.jpg";
+import braceletTBar from "@/assets/bracelet-t-bar.jpg";
+import braceletRollDisplay from "@/assets/bracelet-roll-display.jpg";
+import braceletTower from "@/assets/bracelet-tower.jpg";
+import necklaceDisplayBust from "@/assets/necklace-display-bust.jpg";
+import necklaceStand from "@/assets/necklace-stand.jpg";
+import necklaceDisplayPad from "@/assets/necklace-display-pad.jpg";
+import easelNecklaceDisplay from "@/assets/easel-necklace-display.jpg";
+import watchDisplayPillow from "@/assets/watch-display-pillow.jpg";
+import watchDisplayCase from "@/assets/watch-display-case.jpg";
+import watchStand from "@/assets/watch-stand.jpg";
+import watchCollectionBox from "@/assets/watch-collection-box.jpg";
+
 const ProductShowcasePage = () => {
   const { category } = useParams();
   const [isQuoteSidebarOpen, setIsQuoteSidebarOpen] = useState(false);
@@ -28,22 +62,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "LED Jewelry Showcase",
-          image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
+          image: ledJewelryShowcase,
           description: "Premium LED-lit showcase with tempered glass and security locks"
         },
         {
           name: "Rotating Display Case",
-          image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
+          image: rotatingDisplayCase,
           description: "360-degree rotating display case for maximum visibility"
         },
         {
           name: "Wall-Mounted Display",
-          image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
+          image: wallMountedDisplay,
           description: "Space-saving wall-mounted display solutions"
         },
         {
           name: "Counter Display Unit",
-          image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+          image: counterDisplayUnit,
           description: "Elegant counter-top display units for high-traffic areas"
         }
       ]
@@ -54,22 +88,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Velvet Ring Box",
-          image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+          image: velvetRingBox,
           description: "Soft velvet interior ring boxes in various colors"
         },
         {
           name: "Wooden Jewelry Box",
-          image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+          image: woodenJewelryBox,
           description: "Handcrafted wooden boxes with multiple compartments"
         },
         {
           name: "Leather Gift Box",
-          image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+          image: leatherGiftBox,
           description: "Premium leather boxes with magnetic closure"
         },
         {
           name: "Custom Branded Box",
-          image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+          image: customBrandedBox,
           description: "Fully customizable boxes with your brand logo and colors"
         }
       ]
@@ -80,22 +114,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Jewelry Tray Insert",
-          image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
+          image: jewelryTrayInsert,
           description: "Stackable tray inserts with individual compartments"
         },
         {
           name: "Storage Cabinet",
-          image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
+          image: storageCabinet,
           description: "Multi-drawer storage cabinets for large inventories"
         },
         {
           name: "Travel Organizer",
-          image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
+          image: travelOrganizer,
           description: "Portable jewelry organizers for trade shows"
         },
         {
           name: "Modular System",
-          image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+          image: modularSystem,
           description: "Flexible modular organization systems"
         }
       ]
@@ -106,22 +140,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Ring Display Stand",
-          image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+          image: ringDisplayStand,
           description: "Individual ring stands in various materials and heights"
         },
         {
           name: "Multi-Ring Display",
-          image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+          image: multiRingDisplay,
           description: "Multi-tier displays for ring collections"
         },
         {
           name: "Finger Form Display",
-          image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+          image: fingerFormDisplay,
           description: "Realistic finger forms for ring presentation"
         },
         {
           name: "Rotating Ring Display",
-          image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+          image: rotatingRingDisplay,
           description: "Motorized rotating displays for enhanced visibility"
         }
       ]
@@ -132,22 +166,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Earring Display Cards",
-          image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
+          image: earringDisplayCards,
           description: "Professional display cards for stud and drop earrings"
         },
         {
           name: "Earring Tree Stand",
-          image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
+          image: earringTreeStand,
           description: "Elegant tree-style stands for multiple pairs"
         },
         {
           name: "Rotating Earring Display",
-          image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
+          image: rotatingEarringDisplay,
           description: "Spinning displays for maximum browsing convenience"
         },
         {
           name: "Wall-Mounted Earring Display",
-          image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+          image: wallMountedEarringDisplay,
           description: "Space-efficient wall-mounted earring displays"
         }
       ]
@@ -158,22 +192,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Bracelet Display Ramp",
-          image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+          image: braceletDisplayRamp,
           description: "Sloped display ramps for bracelet presentation"
         },
         {
           name: "Bracelet T-Bar",
-          image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+          image: braceletTBar,
           description: "Classic T-bar stands in various materials"
         },
         {
           name: "Bracelet Roll Display",
-          image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+          image: braceletRollDisplay,
           description: "Curved roll displays for multiple bracelets"
         },
         {
           name: "Bracelet Tower",
-          image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+          image: braceletTower,
           description: "Multi-level tower displays for bracelet collections"
         }
       ]
@@ -184,22 +218,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Necklace Display Bust",
-          image: "/lovable-uploads/8517c22a-2ca5-453b-8a37-a6693469af3f.png",
+          image: necklaceDisplayBust,
           description: "Elegant busts for necklace and pendant display"
         },
         {
           name: "Necklace Stand",
-          image: "/lovable-uploads/6bd6da33-e9a9-40c5-a4e9-bad5c8a67bb0.png",
+          image: necklaceStand,
           description: "Adjustable height stands for various necklace lengths"
         },
         {
           name: "Necklace Display Pad",
-          image: "/lovable-uploads/b2313dd8-99f0-4a7d-8a07-e74ec9830130.png",
+          image: necklaceDisplayPad,
           description: "Soft velvet pads for delicate necklace presentation"
         },
         {
           name: "Easel Necklace Display",
-          image: "/lovable-uploads/d448b59b-cd2c-4ea4-8b96-2603432aa507.png",
+          image: easelNecklaceDisplay,
           description: "Easel-style displays for countertop presentation"
         }
       ]
@@ -210,22 +244,22 @@ const ProductShowcasePage = () => {
       products: [
         {
           name: "Watch Display Pillow",
-          image: "/lovable-uploads/db1af003-700f-44a9-8c6b-286592b1c856.png",
+          image: watchDisplayPillow,
           description: "Curved pillows for elegant watch presentation"
         },
         {
           name: "Watch Display Case",
-          image: "/lovable-uploads/f6c128bd-e193-444a-aac3-9dc693db38af.png",
+          image: watchDisplayCase,
           description: "Locked display cases for luxury timepieces"
         },
         {
           name: "Watch Stand",
-          image: "/lovable-uploads/fd2af68e-cdd0-4df7-a246-cbae1a1ef825.png",
+          image: watchStand,
           description: "Individual watch stands in premium materials"
         },
         {
           name: "Watch Collection Box",
-          image: "/lovable-uploads/db4f9a27-1291-49dd-a8f0-863d3301853b.png",
+          image: watchCollectionBox,
           description: "Multi-watch storage and display boxes"
         }
       ]
