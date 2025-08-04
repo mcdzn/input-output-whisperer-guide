@@ -70,10 +70,6 @@ const Hero = () => {
               JEWELRY PRODUCTS
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link to="/collections" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
-              COLLECTIONS
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
-            </Link>
             <Link to="/contact" className="hover:text-blue-200 transition-all duration-300 text-sm md:text-base relative group">
               CONTACT US / FAQ
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-200 group-hover:w-full transition-all duration-300"></span>
