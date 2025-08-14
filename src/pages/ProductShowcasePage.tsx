@@ -11,10 +11,47 @@ import ledJewelryShowcase from "@/assets/led-jewelry-showcase.jpg";
 import rotatingDisplayCase from "@/assets/rotating-display-case.jpg";
 import wallMountedDisplay from "@/assets/wall-mounted-display.jpg";
 import counterDisplayUnit from "@/assets/counter-display-unit.jpg";
-import velvetRingBox from "@/assets/velvet-ring-box.jpg";
-import woodenJewelryBox from "@/assets/wooden-jewelry-box.jpg";
-import leatherGiftBox from "@/assets/leather-gift-box.jpg";
-import customBrandedBox from "@/assets/custom-branded-box.jpg";
+
+// Import series images
+import silkRingBox from "@/assets/silk-ring-box.jpg";
+import silkNecklaceBox from "@/assets/silk-necklace-box.jpg";
+import silkEarringBox from "@/assets/silk-earring-box.jpg";
+import silkBraceletBox from "@/assets/silk-bracelet-box.jpg";
+import silkPaperBag from "@/assets/silk-paper-bag.jpg";
+import silkFabricPouch from "@/assets/silk-fabric-pouch.jpg";
+import silkGiftSet from "@/assets/silk-gift-set.jpg";
+
+import satinRingBox from "@/assets/satin-ring-box.jpg";
+import satinNecklaceBox from "@/assets/satin-necklace-box.jpg";
+import satinEarringBox from "@/assets/satin-earring-box.jpg";
+import satinBraceletBox from "@/assets/satin-bracelet-box.jpg";
+import satinPaperBag from "@/assets/satin-paper-bag.jpg";
+import satinFabricPouch from "@/assets/satin-fabric-pouch.jpg";
+import satinGiftSet from "@/assets/satin-gift-set.jpg";
+
+import leatheretteRingBox from "@/assets/leatherette-ring-box.jpg";
+import leatheretteNecklaceBox from "@/assets/leatherette-necklace-box.jpg";
+import leatheretteEarringBox from "@/assets/leatherette-earring-box.jpg";
+import leatheretteBraceletBox from "@/assets/leatherette-bracelet-box.jpg";
+import leatherettePaperBag from "@/assets/leatherette-paper-bag.jpg";
+import leatheretteFabricPouch from "@/assets/leatherette-fabric-pouch.jpg";
+import leatheretteGiftSet from "@/assets/leatherette-gift-set.jpg";
+
+import fabricRingBox from "@/assets/fabric-ring-box.jpg";
+import fabricNecklaceBox from "@/assets/fabric-necklace-box.jpg";
+import fabricEarringBox from "@/assets/fabric-earring-box.jpg";
+import fabricBraceletBox from "@/assets/fabric-bracelet-box.jpg";
+import fabricPaperBag from "@/assets/fabric-paper-bag.jpg";
+import fabricFabricPouch from "@/assets/fabric-fabric-pouch.jpg";
+import fabricGiftSet from "@/assets/fabric-gift-set.jpg";
+
+import ivoryRingBox from "@/assets/ivory-ring-box.jpg";
+import ivoryNecklaceBox from "@/assets/ivory-necklace-box.jpg";
+import ivoryEarringBox from "@/assets/ivory-earring-box.jpg";
+import ivoryBraceletBox from "@/assets/ivory-bracelet-box.jpg";
+import ivoryPaperBag from "@/assets/ivory-paper-bag.jpg";
+import ivoryFabricPouch from "@/assets/ivory-fabric-pouch.jpg";
+import ivoryGiftSet from "@/assets/ivory-gift-set.jpg";
 import jewelryTrayInsert from "@/assets/jewelry-tray-insert.jpg";
 import storageCabinet from "@/assets/storage-cabinet.jpg";
 import travelOrganizer from "@/assets/travel-organizer.jpg";
@@ -83,28 +120,73 @@ const ProductShowcasePage = () => {
       ]
     },
     "jewelry-boxes": {
-      title: "Jewelry Boxes",
-      description: "Elegant jewelry boxes crafted from premium materials with luxurious finishes and custom branding options.",
-      products: [
+      title: "Jewelry Box Collections",
+      description: "Discover our premium jewelry packaging collections, each carefully curated with coordinated designs and materials for a complete brand experience.",
+      series: [
         {
-          name: "Velvet Ring Box",
-          image: velvetRingBox,
-          description: "Soft velvet interior ring boxes in various colors"
+          name: "The Silk Series",
+          description: "Luxurious silk-finished packaging in elegant champagne tones",
+          products: [
+            { name: "Silk Ring Box", image: silkRingBox, description: "Premium silk-finished ring box with soft interior" },
+            { name: "Silk Necklace Box", image: silkNecklaceBox, description: "Elegant necklace presentation box" },
+            { name: "Silk Earring Box", image: silkEarringBox, description: "Delicate earring display box" },
+            { name: "Silk Bracelet Box", image: silkBraceletBox, description: "Sophisticated bracelet storage box" },
+            { name: "Silk Paper Bag", image: silkPaperBag, description: "Coordinated luxury shopping bag" },
+            { name: "Silk Fabric Pouch", image: silkFabricPouch, description: "Soft drawstring jewelry pouch" },
+            { name: "Silk Gift Set", image: silkGiftSet, description: "Complete gift presentation set" }
+          ]
         },
         {
-          name: "Wooden Jewelry Box",
-          image: woodenJewelryBox,
-          description: "Handcrafted wooden boxes with multiple compartments"
+          name: "The Satin Series",
+          description: "Smooth satin-finish collection in pearl white elegance",
+          products: [
+            { name: "Satin Ring Box", image: satinRingBox, description: "Lustrous satin ring presentation box" },
+            { name: "Satin Necklace Box", image: satinNecklaceBox, description: "Pearl white necklace display box" },
+            { name: "Satin Earring Box", image: satinEarringBox, description: "Refined earring storage solution" },
+            { name: "Satin Bracelet Box", image: satinBraceletBox, description: "Elegant bracelet presentation box" },
+            { name: "Satin Paper Bag", image: satinPaperBag, description: "Luxury satin-finish shopping bag" },
+            { name: "Satin Fabric Pouch", image: satinFabricPouch, description: "Silky smooth jewelry pouch" },
+            { name: "Satin Gift Set", image: satinGiftSet, description: "Complete satin gift collection" }
+          ]
         },
         {
-          name: "Leather Gift Box",
-          image: leatherGiftBox,
-          description: "Premium leather boxes with magnetic closure"
+          name: "The Leatherette Series",
+          description: "Sophisticated leatherette collection in classic black",
+          products: [
+            { name: "Leatherette Ring Box", image: leatheretteRingBox, description: "Professional leatherette ring box" },
+            { name: "Leatherette Necklace Box", image: leatheretteNecklaceBox, description: "Sleek necklace presentation box" },
+            { name: "Leatherette Earring Box", image: leatheretteEarringBox, description: "Contemporary earring display box" },
+            { name: "Leatherette Bracelet Box", image: leatheretteBraceletBox, description: "Modern bracelet storage box" },
+            { name: "Leatherette Paper Bag", image: leatherettePaperBag, description: "Sophisticated shopping bag" },
+            { name: "Leatherette Fabric Pouch", image: leatheretteFabricPouch, description: "Durable jewelry storage pouch" },
+            { name: "Leatherette Gift Set", image: leatheretteGiftSet, description: "Professional gift presentation set" }
+          ]
         },
         {
-          name: "Custom Branded Box",
-          image: customBrandedBox,
-          description: "Fully customizable boxes with your brand logo and colors"
+          name: "The Fabric Series",
+          description: "Premium fabric collection in rich navy blue",
+          products: [
+            { name: "Fabric Ring Box", image: fabricRingBox, description: "Textured fabric ring presentation box" },
+            { name: "Fabric Necklace Box", image: fabricNecklaceBox, description: "Rich fabric necklace display box" },
+            { name: "Fabric Earring Box", image: fabricEarringBox, description: "Sophisticated earring storage box" },
+            { name: "Fabric Bracelet Box", image: fabricBraceletBox, description: "Premium fabric bracelet box" },
+            { name: "Fabric Paper Bag", image: fabricPaperBag, description: "Luxury fabric-finish shopping bag" },
+            { name: "Fabric Pouch", image: fabricFabricPouch, description: "Premium fabric jewelry pouch" },
+            { name: "Fabric Gift Set", image: fabricGiftSet, description: "Complete fabric gift collection" }
+          ]
+        },
+        {
+          name: "The Ivory Series",
+          description: "Classic ivory collection in timeless cream white",
+          products: [
+            { name: "Ivory Ring Box", image: ivoryRingBox, description: "Classic ivory ring presentation box" },
+            { name: "Ivory Necklace Box", image: ivoryNecklaceBox, description: "Timeless necklace display box" },
+            { name: "Ivory Earring Box", image: ivoryEarringBox, description: "Elegant earring storage box" },
+            { name: "Ivory Bracelet Box", image: ivoryBraceletBox, description: "Refined bracelet presentation box" },
+            { name: "Ivory Paper Bag", image: ivoryPaperBag, description: "Classic ivory shopping bag" },
+            { name: "Ivory Fabric Pouch", image: ivoryFabricPouch, description: "Traditional jewelry storage pouch" },
+            { name: "Ivory Gift Set", image: ivoryGiftSet, description: "Complete ivory gift collection" }
+          ]
         }
       ]
     },
@@ -304,32 +386,77 @@ const ProductShowcasePage = () => {
       {/* Product Grid */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentCategory.products.map((product, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden bg-white group">
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
+          {/* Check if category has series (jewelry-boxes) */}
+          {currentCategory.series ? (
+            <div className="space-y-16">
+              {currentCategory.series.map((series, seriesIndex) => (
+                <div key={seriesIndex} className="space-y-8">
+                  {/* Series Header */}
+                  <div className="text-center">
+                    <h2 className="text-3xl font-bold text-foreground mb-4">{series.name}</h2>
+                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{series.description}</p>
+                  </div>
+                  
+                  {/* Series Products Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-6">
+                    {series.products.map((product, productIndex) => (
+                      <Card key={productIndex} className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden bg-white group">
+                        <div className="aspect-square overflow-hidden">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <h4 className="text-sm font-medium text-foreground mb-2">{product.name}</h4>
+                          <p className="text-xs text-muted-foreground mb-3 leading-relaxed">
+                            {product.description}
+                          </p>
+                          <Button 
+                            size="sm"
+                            variant="outline" 
+                            className="w-full text-xs"
+                            onClick={() => openQuoteSidebar(product.name, `${currentCategory.title} - ${series.name}`)}
+                          >
+                            Request Quote
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{product.name}</h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {product.description}
-                  </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
-                    onClick={() => openQuoteSidebar(product.name, currentCategory.title)}
-                  >
-                    Request Quote
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            /* Regular Product Grid for other categories */
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {currentCategory.products.map((product, index) => (
+                <Card key={index} className="border-border hover:shadow-lg transition-all duration-300 overflow-hidden bg-white group">
+                  <div className="aspect-square overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{product.name}</h3>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      {product.description}
+                    </p>
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => openQuoteSidebar(product.name, currentCategory.title)}
+                    >
+                      Request Quote
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
